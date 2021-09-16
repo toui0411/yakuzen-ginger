@@ -1,0 +1,726 @@
+html.scrollStop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+html.scrollStop body {
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-feature-settings: "palt" 1;
+  padding: 0;
+}
+
+.impact {
+  font-family: sans-serif;
+}
+
+html,
+body {
+  overscroll-behavior: none;
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #000;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+
+.en {
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.ja {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+select {
+  background-color: transparent;
+}
+
+select:focus {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+input {
+  box-shadow: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+/*For Responsive*/
+.pc_only {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .pc_only {
+    display: none;
+  }
+}
+
+.sp_only {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .sp_only {
+    display: block;
+  }
+}
+
+.pc_only_flex {
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .pc_only_flex {
+    display: none;
+  }
+}
+
+.sp_only_flex {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .sp_only_flex {
+    display: flex;
+  }
+}
+
+/* main */
+main {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+}
+
+input,
+textarea,
+select {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.fade-leave-active, .fade-enter-active {
+  transition: all 0.3s;
+}
+
+.fade-leave-to, .fade-enter {
+  opacity: 0;
+}
+
+.fade-leave, .fade-enter-to {
+  opacity: 1;
+}
+
+.q_card-leave-active, .q_card-enter-active {
+  transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.q_card-leave-to, .q_card-enter {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.q_card-leave, .q_card-enter-to {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scale-modal-enter-active, .scale-modal-leave-active {
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.scale-modal-enter-active .modal-inner, .scale-modal-leave-active .modal-inner {
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.scale-modal-enter, .scale-modal-leave-to {
+  opacity: 0;
+}
+
+.scale-modal-enter .modal-inner, .scale-modal-leave-to .modal-inner {
+  transform: scale(0.8);
+}
+
+.scale-modal-enter-to, .scale-modal-leave {
+  opacity: 1;
+}
+
+.scale-modal-enter-to .modal-inner, .scale-modal-leave .modal-inner {
+  transform: scale(1);
+}
+
+.transY-modal-enter-active, .transY-modal-leave-active {
+  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.transY-modal-enter-active .modal-inner, .transY-modal-leave-active .modal-inner {
+  transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.transY-modal-enter, .transY-modal-leave-to {
+  opacity: 0;
+}
+
+.transY-modal-enter .modal-inner, .transY-modal-leave-to .modal-inner {
+  transform: translateY(30px);
+}
+
+.transY-modal-enter-to, .transY-modal-leave {
+  opacity: 1;
+}
+
+.transY-modal-enter-to .modal-inner, .transY-modal-leave .modal-inner {
+  transform: translateY(0px);
+}
+
+.fade-leave-active, .fade-enter-active {
+  transition: all 0.3s;
+}
+
+.fade-leave-to, .fade-enter {
+  opacity: 0;
+}
+
+.fade-leave, .fade-enter-to {
+  opacity: 1;
+}
+
+.from-top-card-leave-active, .from-top-card-enter-active {
+  transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.from-top-card-leave-to, .from-top-card-enter {
+  transform: translateY(-100%);
+}
+
+.from-top-card-leave, .from-top-card-enter-to {
+  transform: none;
+}
+
+.app-modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+}
+
+.app-modal .modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.app-modal .modal-close:before, .app-modal .modal-close:after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  transform: translate(-50%, 50%);
+  height: 2px;
+  border-radius: 20px;
+  width: 70%;
+  left: 15%;
+  background-color: black;
+  z-index: 10;
+}
+
+.app-modal .modal-close:before {
+  transform: rotate(45deg);
+}
+
+.app-modal .modal-close:after {
+  transform: rotate(-45deg);
+}
+
+.app-modal .modal-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app-modal .modal-content .modal-inner {
+  background-color: white;
+  position: relative;
+  border: 4px solid #2850ff;
+  border-radius: 30px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.sec-inner {
+  max-width: 1160px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes clip-to-right {
+  0% {
+    clip-path: inset(0% 100% 0% 0);
+  }
+  100% {
+    clip-path: inset(-2% -4% -2% -2%);
+  }
+}
+
+@keyframes clip-to-right-rev {
+  0% {
+    clip-path: inset(0% 0% 0% 0);
+  }
+  100% {
+    clip-path: inset(0% 100% 0% 0);
+  }
+}
+
+.card-anim {
+  position: relative;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.card-anim:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #262727;
+  z-index: 1;
+  transform: scaleX(1);
+  transform-origin: right;
+}
+
+.card-anim .card-text {
+  position: relative;
+  z-index: 2;
+}
+
+.card-anim.inview {
+  transform: scaleX(1);
+  transition: transform 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.card-anim.inview:before {
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.6s;
+}
+
+.fadeInUp {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.fadeInUp.inview {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.fadeIn {
+  opacity: 0;
+}
+
+.fadeIn.inview {
+  opacity: 1;
+  transition: all 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.white-btn {
+  color: #2850ff;
+  border: 2px solid #2850ff;
+  border-radius: 40px;
+}
+
+.blue-btn {
+  color: white;
+  background-color: #2850ff;
+  border: 2px solid #2850ff;
+  border-radius: 40px;
+}
+
+.base-input-text {
+  width: 100%;
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid #929292;
+}
+
+.base-input-text::placeholder {
+  color: rgba(40, 80, 255, 0.6);
+}
+
+.c-red {
+  color: red;
+}
+
+.rich-text-area {
+  color: #2850ff;
+}
+
+.rich-text-area * {
+  word-break: break-all;
+}
+
+.rich-text-area a {
+  color: #ff2c60;
+}
+
+.rich-text-area p {
+  margin: 10px 0;
+}
+
+.rich-text-area h1 {
+  font-size: 24px;
+  margin: 10px 0;
+  color: #ff0078;
+}
+
+.rich-text-area h2 {
+  font-size: 22px;
+  margin: 10px 0;
+  color: #ff0078;
+}
+
+.rich-text-area h3 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: #ff0078;
+}
+
+.rich-text-area h4 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #ff0078;
+}
+
+.rich-text-area iframe {
+  width: 100% !important;
+  height: 591px;
+}
+
+@media screen and (max-width: 1225px) {
+  .rich-text-area iframe {
+    height: 62vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .rich-text-area iframe {
+    height: 51vw;
+  }
+}
+
+input[type="text"],
+textarea,
+select {
+  border: none;
+  appearance: none;
+  width: 100%;
+  border-radius: 0;
+  padding: 5px;
+  font-size: 16px;
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  55% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  65% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash-loop {
+  from {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  55% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  65% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash-sdw {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  55% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  65% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.arrow-block {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 767px) {
+  .arrow-block {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.arrow-block:before {
+  transition: all 0.3s;
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translate(-60%, -50%) rotate(45deg);
+  left: 46%;
+  border-right: 2px solid #ff2c60;
+  border-top: 2px solid #ff2c60;
+  width: 14px;
+  height: 14px;
+}
+
+@media screen and (max-width: 767px) {
+  .arrow-block:before {
+    width: 11px;
+    height: 11px;
+  }
+}
+
+@keyframes clip-to-right {
+  0% {
+    clip-path: inset(0% 100% 0% 0);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0);
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.9;
+  }
+  6% {
+    opacity: 0.85;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  11% {
+    opacity: 0.922;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  14% {
+    opacity: 0.95;
+  }
+  16% {
+    opacity: 0.98;
+  }
+  17% {
+    opacity: 0.9;
+  }
+  19% {
+    opacity: 0.93;
+  }
+  20% {
+    opacity: 0.99;
+  }
+  24% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0.94;
+  }
+  28% {
+    opacity: 0.98;
+  }
+  37% {
+    opacity: 0.93;
+  }
+  38% {
+    opacity: 0.5;
+  }
+  39% {
+    opacity: 0.96;
+  }
+  42% {
+    opacity: 1;
+  }
+  44% {
+    opacity: 0.97;
+  }
+  46% {
+    opacity: 0.94;
+  }
+  56% {
+    opacity: 0.9;
+  }
+  58% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.99;
+  }
+  68% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  72% {
+    opacity: 0.95;
+  }
+  93% {
+    opacity: 0.93;
+  }
+  95% {
+    opacity: 0.95;
+  }
+  97% {
+    opacity: 0.93;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.flashIn {
+  opacity: 0;
+}
+
+.flashIn.inview {
+  animation: flash 0.3s both;
+}

@@ -1,0 +1,682 @@
+@import "utilities";
+
+html {
+  &.scrollStop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    body {
+      position: fixed;
+      left: 0;
+      top: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+//Reset Style
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-feature-settings: "palt" 1;
+  padding: 0;
+}
+.impact {
+  font-family: sans-serif;
+}
+html,
+body {
+  overscroll-behavior: none;
+  font-family: sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+  background-color: #000;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  color: white;
+}
+.en {
+  font-family: "Roboto Condensed", sans-serif;
+}
+.ja {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+textarea {
+  resize: none;
+  &:focus {
+    outline: none;
+  }
+}
+select {
+  background-color: transparent;
+  &:focus {
+    outline: none;
+  }
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  line-height: 1.6;
+}
+ul,
+li {
+  list-style: none;
+}
+.bold {
+  font-weight: bold;
+}
+input {
+  box-shadow: none;
+  &:focus {
+    outline: none;
+  }
+}
+/*For Responsive*/
+.pc_only {
+  display: block;
+  @include max-screen(767px) {
+    display: none;
+  }
+}
+.sp_only {
+  display: none;
+  @include max-screen(767px) {
+    display: block;
+  }
+}
+.pc_only_flex {
+  display: flex;
+  @include max-screen(767px) {
+    display: none;
+  }
+}
+.sp_only_flex {
+  display: none;
+  @include max-screen(767px) {
+    display: flex;
+  }
+}
+/* main */
+main {
+  min-height: 100vh;
+}
+img {
+  max-width: 100%;
+}
+input,
+textarea,
+select {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.fade {
+  &-leave-active,
+  &-enter-active {
+    transition: all 0.3s;
+  }
+  &-leave-to,
+  &-enter {
+    opacity: 0;
+  }
+  &-leave,
+  &-enter-to {
+    opacity: 1;
+  }
+}
+
+.q_card {
+  &-leave-active,
+  &-enter-active {
+    transition: all 0.7s $easeOutQuint;
+  }
+  &-leave-to,
+  &-enter {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  &-leave,
+  &-enter-to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+//.page-enter-active,
+//.page-leave-active {
+//  transition: opacity 0.3s;
+//}
+//.page-enter,
+//.page-leave-active {
+//  opacity: 0;
+//}
+
+.scale-modal {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.8s $easeOutQuint;
+    .modal-inner {
+      transition: all 0.8s $easeOutQuint;
+    }
+  }
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+    .modal-inner {
+      transform: scale(0.8);
+    }
+  }
+  &-enter-to,
+  &-leave {
+    opacity: 1;
+    .modal-inner {
+      transform: scale(1);
+    }
+  }
+}
+
+.transY-modal {
+  &-enter-active,
+  &-leave-active {
+    transition: all 1.2s $easeOutQuint;
+    .modal-inner {
+      transition: all 1.2s $easeOutQuint;
+    }
+  }
+  &-enter,
+  &-leave-to {
+    opacity: 0;
+    .modal-inner {
+      transform: translateY(30px);
+    }
+  }
+  &-enter-to,
+  &-leave {
+    opacity: 1;
+    .modal-inner {
+      transform: translateY(0px);
+    }
+  }
+}
+
+.fade {
+  &-leave-active,
+  &-enter-active {
+    transition: all 0.3s;
+  }
+  &-leave-to,
+  &-enter {
+    opacity: 0;
+  }
+  &-leave,
+  &-enter-to {
+    opacity: 1;
+  }
+}
+
+.from-top-card {
+  &-leave-active,
+  &-enter-active {
+    transition: all 1s $easeOutQuint;
+  }
+  &-leave-to,
+  &-enter {
+    transform: translateY(-100%);
+  }
+  &-leave,
+  &-enter-to {
+    transform: none;
+  }
+}
+
+.app-modal {
+  background-color: rgba(black, 0.6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  .modal-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      transform: translate(-50%, 50%);
+      height: 2px;
+      border-radius: 20px;
+      width: 70%;
+      left: 15%;
+      background-color: black;
+      z-index: 10;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+  .modal-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    .modal-inner {
+      background-color: white;
+      position: relative;
+      border: 4px solid $blue;
+      border-radius: 30px;
+    }
+  }
+}
+
+.flex-container {
+  display: flex;
+}
+
+.sec-inner {
+  max-width: 1160px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes clip-to-right {
+  0% {
+    clip-path: inset(0% 100% 0% 0);
+  }
+  100% {
+    clip-path: inset(-2% -4% -2% -2%);
+  }
+}
+@keyframes clip-to-right-rev {
+  0% {
+    clip-path: inset(0% 0% 0% 0);
+  }
+  100% {
+    clip-path: inset(0% 100% 0% 0);
+  }
+}
+
+.card-anim {
+  position: relative;
+  transform-origin: left;
+  transform: scaleX(0);
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $main_black;
+    z-index: 1;
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  .card-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  &.inview {
+    transform: scaleX(1);
+    transition: transform 0.7s $easeInOutCirc;
+    &:before {
+      transform: scaleX(0);
+      transition: transform 0.5s $easeInOutCirc 0.6s;
+    }
+  }
+}
+
+.fadeInUp {
+  transform: translateY(30px);
+  opacity: 0;
+  &.inview {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: all 0.7s $easeInOutCirc;
+  }
+}
+.fadeIn {
+  opacity: 0;
+  &.inview {
+    opacity: 1;
+    transition: all 0.7s $easeInOutCirc;
+  }
+}
+
+.white-btn {
+  color: $blue;
+  border: 2px solid $blue;
+  border-radius: 40px;
+}
+.blue-btn {
+  color: white;
+  background-color: $blue;
+  border: 2px solid $blue;
+  border-radius: 40px;
+}
+
+.base-input-text {
+  width: 100%;
+  font-size: 18px;
+  padding: 5px;
+  border: none;
+  border-bottom: 2px solid rgb(146, 146, 146);
+  &::placeholder {
+    color: rgba($blue, 0.6);
+  }
+}
+
+.c-red {
+  color: red;
+}
+
+.rich-text-area {
+  color: $blue;
+  *{
+    word-break: break-all;
+  }
+  a{
+    color: $red;
+  }
+  p {
+    margin:10px 0;
+  }
+  h1 {
+    font-size: 24px;
+    margin:10px 0;
+    color: $pink;
+  }
+  h2 {
+    font-size: 22px;
+    margin:10px 0;
+    color: $pink;
+  }
+  h3 {
+    font-size: 20px;
+    margin:10px 0;
+    color: $pink;
+  }
+  h4 {
+    font-size: 18px;
+    margin:10px 0;
+    color: $pink;
+  }
+  iframe {
+    width: 100% !important;
+    height: 591px;
+    @include max-screen(1225px) {
+      height: 62vw;
+    }
+    @include max-screen(767px) {
+      height: 51vw;
+    }
+  }
+}
+
+input[type="text"],
+textarea,
+select {
+  border: none;
+  appearance: none;
+  width: 100%;
+  border-radius: 0;
+  padding: 5px;
+  font-size: 16px;
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  55% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  65% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes flash-loop {
+  from {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  40% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  55% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  65% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes flash-sdw {
+  from {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  55% {
+    opacity: 0.3;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  65% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.arrow-block {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #fff;
+  transition: all 0.3s;
+  @include max-screen(767px) {
+    width: 30px;
+    height: 30px;
+  }
+  &:before {
+    transition: all 0.3s;
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translate(-60%, -50%) rotate(45deg);
+    left: 46%;
+    border-right: 2px solid $red;
+    border-top: 2px solid $red;
+    width: 14px;
+    height: 14px;
+    @include max-screen(767px) {
+      width: 11px;
+      height: 11px;
+    }
+  }
+}
+
+@keyframes clip-to-right {
+  0% {
+    clip-path: inset(0% 100% 0% 0);
+  }
+  100% {
+    clip-path: inset(0% 0% 0% 0);
+  }
+}
+
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+  4% {
+    opacity: 0.9;
+  }
+  6% {
+    opacity: 0.85;
+  }
+  8% {
+    opacity: 0.95;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  11% {
+    opacity: 0.922;
+  }
+  12% {
+    opacity: 0.9;
+  }
+  14% {
+    opacity: 0.95;
+  }
+  16% {
+    opacity: 0.98;
+  }
+  17% {
+    opacity: 0.9;
+  }
+  19% {
+    opacity: 0.93;
+  }
+  20% {
+    opacity: 0.99;
+  }
+  24% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0.94;
+  }
+  28% {
+    opacity: 0.98;
+  }
+  37% {
+    opacity: 0.93;
+  }
+  38% {
+    opacity: 0.5;
+  }
+  39% {
+    opacity: 0.96;
+  }
+  42% {
+    opacity: 1;
+  }
+  44% {
+    opacity: 0.97;
+  }
+  46% {
+    opacity: 0.94;
+  }
+  56% {
+    opacity: 0.9;
+  }
+  58% {
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.99;
+  }
+  68% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.9;
+  }
+  72% {
+    opacity: 0.95;
+  }
+  93% {
+    opacity: 0.93;
+  }
+  95% {
+    opacity: 0.95;
+  }
+  97% {
+    opacity: 0.93;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.flashIn {
+  opacity: 0;
+  &.inview {
+    animation: flash 0.3s both;
+  }
+}

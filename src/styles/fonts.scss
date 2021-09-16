@@ -1,0 +1,10 @@
+@mixin font-face($name, $path, $weight) {
+  $src: null;
+  $format: "woff";
+  $src: append($src, url(quote($path)) format(quote($format)), comma);
+  @font-face {
+    font-family: quote($name);
+    src: $src;
+    font-weight: $weight;
+  }
+}
