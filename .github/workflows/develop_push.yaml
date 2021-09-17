@@ -19,10 +19,7 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
     - name: Install Dependencies
       run: yarn && yarn build && yarn export
-      # ↑ buildが違うコマンドなら、適宜変更して下さい
-    - name: deploy to Firebase Hosting
-      run: |
-        yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
+      
     - name: deployConfig
       run: |
         yarn deployset:dev
