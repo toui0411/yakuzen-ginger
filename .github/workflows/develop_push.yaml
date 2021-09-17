@@ -23,6 +23,9 @@ jobs:
     - name: deploy to Firebase Hosting
       run: |
         yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
+    - name: deployConfig
+      run: |
+        yarn deployset:dev
     - name: deploy to Firebase Hosting
       run: |
-        yarn deployset:dev && yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
+        yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
