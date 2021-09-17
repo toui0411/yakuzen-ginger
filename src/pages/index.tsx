@@ -48,11 +48,11 @@ const Top = ({ blogs }: InferGetStaticPropsType<typeof getStaticProps>) => {
 export const TopFv: FC = () => {
   return (
     <Box py={3}>
-      <Box position="relative" height={'80vh'}>
+      <Box position="relative" height={'80vh'} maxH="700px">
         <Flex animation={`${spin} 30s linear infinite`} position="absolute" left="0" top="0">
           {
             [...Array(10).keys()].map(i => {
-              return <Image mr={1} key={i} height={'80vh'} src="/img/common/logo.svg"></Image>
+              return <Image mr={1} key={i} height={'80vh'} maxH="700px" src="/img/common/logo.svg"></Image>
             })
           }
         </Flex>

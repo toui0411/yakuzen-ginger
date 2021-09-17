@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider,Image } from '@chakra-ui/react'
 import * as gtag from '../lib/gtag'
 import React, { FC, useEffect } from 'react';
 import Head from 'next/head'
@@ -12,6 +12,8 @@ import { Box, extendTheme } from '@chakra-ui/react'
 
 import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
+import Transition from "../components/Transition"
+
 const theme = extendTheme({
   colors: {
     mainPink: "#ff0078",
@@ -23,6 +25,13 @@ const theme = extendTheme({
   },
 })
 
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+const breakpoints = createBreakpoints({
+  sm: "25em",
+  md: "30em",
+  lg: "62em",
+  xl: "62em",
+})
 
 const Footer: FC = () => {
   return (
@@ -59,8 +68,11 @@ const App = ({ Component, pageProps }: AppProps) => {
       <RecoilRoot>
         <ChakraProvider theme={theme}>
           <Box>
-            <Box ml="auto" maxW="500px" overflow="hidden">
-              <Component {...pageProps} />
+          <FixImage/>
+            <Box ml="auto" maxW="30rem" overflow="hidden">
+              <Transition location={router.pathname}>
+                <Component {...pageProps} />
+              </Transition>
               <Footer />
             </Box>
           </Box>
@@ -69,5 +81,14 @@ const App = ({ Component, pageProps }: AppProps) => {
     </>
   )
 }
+
+const FixImage: FC = () => {
+  return (
+    <Box display="flex" alignItems="center" justifyContent="center" position="fixed" h="100%" left="0" top="0"  w={['0px', 'calc(100vw - 30rem)']}>
+      <Image w="100%"  src="/img/ogp/1.jpg"></Image>
+    </Box>
+  )
+}
+
 
 export default App

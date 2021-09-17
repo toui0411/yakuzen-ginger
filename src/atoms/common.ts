@@ -31,13 +31,13 @@ export const blogState = atom({
 });
 
 export const shareURLState = selector({
-  key: 'charCountState',
+  key: 'shareURLState',
   get: ({ get }) => {
     const shareState = get(shareInfoState);
     const tweet =
       "https://twitter.com/intent/tweet?url=" +
       encodeURIComponent(
-        `https://govote.jp/image${shareState.shareImage
+        `https://govote.jp/image/${shareState.shareImage
         }`
       ) +
       "&text=" + encodeURIComponent(`${shareState.shareTags.map(tag => `#${tag} `).join(' ')} 

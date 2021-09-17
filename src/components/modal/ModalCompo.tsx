@@ -29,6 +29,12 @@ const ModalTop: FC = () => {
     </Box>
   )
 }
+const imagedArray = [
+  '/img/ogp/1.jpg',
+  '/img/ogp/2.jpg',
+  '/img/ogp/3.jpg',
+  '/img/ogp/4.jpg',
+]
 
 const ModalShareImages: FC = () => {
   const [state, setState] = useRecoilState(shareInfoState);
@@ -43,10 +49,10 @@ const ModalShareImages: FC = () => {
         </Box>
         <Flex flexWrap="wrap" justifyContent="space-between" color="white" bg="white" fontSize={18}>
           {
-            [...Array(6).keys()].map(i => {
-              return <Box onClick={() => onSelect(i)} w="50%" key={i} borderWidth="7px" borderColor={state.shareImage == i ? 'mainPink' : 'white'}>
+            imagedArray.map((img,i) => {
+              return <Box cursor="pointer" onClick={() => onSelect(i)} w="50%" key={i} borderWidth="7px" borderColor={state.shareImage == i ? 'mainPink' : 'white'}>
                 <AspectRatio w="100%" ratio={16 / 9}>
-                  <Image src="/img/common/icon_tw.svg">
+                  <Image src={img}>
                   </Image>
                 </AspectRatio>
               </Box>
@@ -81,7 +87,7 @@ const ModalShareTags: FC = () => {
         <Flex flexWrap="wrap" justifyContent="space-between" color="white" bg="white" fontSize={18} p={3}>
           {
             shareTaggs.map((tag, i) => {
-              return <HStack mt={i > 1 ? 1 : 0} spacing={3} onClick={state.shareTags.includes(tag) ? () => removeTag(tag) : () => addTag(tag)} w="45%" key={i}>
+              return <HStack cursor="pointer" mt={i > 1 ? 1 : 0} spacing={3} onClick={state.shareTags.includes(tag) ? () => removeTag(tag) : () => addTag(tag)} w="45%" key={i}>
                 <Box w={18} h={18} bg="mainPink" position="relative">
                   {
                     state.shareTags.includes(tag) && <Box position="absolute" left="0" top="-2px" transform="rotate(-45deg)" borderBottomWidth='5px' borderLeftWidth='5px' borderColor="mainBlue" w={'20px'} h={'12px'}></Box>

@@ -4,8 +4,8 @@
  const config = {
   openGraph: {
     type: 'article',
-    locale: 'en_US',
-    site_name: 'NextSSS',
+    locale: 'ja',
+    site_name: "GO VOTE JAPAN",
   },
   twitter: {
     cardType: 'summary_large_image',
