@@ -1,9 +1,6 @@
 name: CI
 
 on:
-  push: # プッシュした時に実行
-    branches: # ブランチを指定
-      - develop
   repository_dispatch:
     types: [contents_update]
 
@@ -12,6 +9,10 @@ jobs:
     name: FrontDeploy
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
+      with:
+        ref: develop
+
     - name: Checkout Repo
       uses: actions/checkout@master
     - name: setup Node
@@ -24,4 +25,4 @@ jobs:
       # ↑ buildが違うコマンドなら、適宜変更して下さい
     - name: deploy to Firebase Hosting
       run: |
-        yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
+        yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting
