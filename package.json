@@ -9,6 +9,8 @@
     "deployset:prd": "firebase target:apply hosting prd govote-production",
     "build": "next build",
     "deploy": "firebase deploy",
+    "deploy:dev": "firebase deploy --only hosting:dev",
+    "deploy:prd": "firebase deploy --only hosting:prd",
     "start": "next start",
     "export": "next export",
     "lint": "next lint",

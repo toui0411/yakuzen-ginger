@@ -20,8 +20,11 @@ const Page = () => {
   const { num } = router.query
   // Make sure we're in the browser
   if (typeof window !== 'undefined') {
-    router.push('/')
+    /* location.href="/" */
   }
+  useEffect(()=>{
+    router.push('/')
+  },[])
 
   return <Box pb={8}>
     <CommonMeta
@@ -31,7 +34,7 @@ const Page = () => {
       ogpURL={imagedArray[Number(num)]}
     />
     <Box position="fixed" left="0" top="0" w="100%" h="100%" bg="white">
-      <Image src="/img/common/logo.svg" maxW="90vw" maxH="90vh" w="100px" position="absolute" left="50%" top="50%" transform="translate(-50%,-50%)"></Image>
+      {/* <Image src="/img/common/logo.svg" maxW="90vw" maxH="90vh" w="100px" position="absolute" left="50%" top="50%" transform="translate(-50%,-50%)"></Image> */}
     </Box>
   </Box>
 }
