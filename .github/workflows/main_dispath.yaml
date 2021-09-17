@@ -11,7 +11,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
       with:
-        ref: develop
+        ref: main
 
     - name: Checkout Repo
       uses: actions/checkout@master
@@ -25,8 +25,8 @@ jobs:
       # ↑ buildが違うコマンドなら、適宜変更して下さい
     - name: deployConfig
       run: |
-        yarn deployset:dev
+        yarn deployset:prd
 
     - name: deploy to Firebase Hosting
       run: |
-        yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
+        yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:prd
