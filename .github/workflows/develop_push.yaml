@@ -23,3 +23,6 @@ jobs:
     - name: deploy to Firebase Hosting
       run: |
         yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
+    - name: deploy to Firebase Hosting
+      run: |
+        yarn deployset:dev && yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
