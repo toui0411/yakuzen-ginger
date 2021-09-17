@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "govote-ca429"
+  },
+  "targets": {
+    "test-site-hosting": {
+      "hosting": {
+        "dev": [
+          "govote-ca429"
+        ],
+        "prd": [
+          "govote-production"
+        ]
+      }
+    }
   }
 }
