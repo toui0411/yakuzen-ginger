@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "ci": "act --secret-file .secrets",
     "dev": "next dev",
     "build": "next build",
     "deploy": "firebase deploy",

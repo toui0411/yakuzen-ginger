@@ -10,8 +10,8 @@ export default function CommonMeta({ title = "GO VOTE JAPAN", description = "GO 
       <meta property="description" content={description} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={url} />
-      <meta property="og:url" content={ogpURL} />
+      <meta property="og:image" content={ogpURL} />
+      <meta property="og:url" content={url} />
       <meta name="twitter:card" content="summary_large_image" />
       <link rel="shortcut icon" type="image/png" href="/favicon.png" />
     </Head>
