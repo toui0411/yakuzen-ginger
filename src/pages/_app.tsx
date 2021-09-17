@@ -66,7 +66,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       </Head>
       <DefaultSeo {...SEO} />
       <RecoilRoot>
-        <ChakraProvider theme={theme}>
+{/*         <ChakraProvider theme={theme}>
           <Box>
           <FixImage/>
             <Box ml="auto" maxW="30rem" overflow="hidden">
@@ -76,7 +76,7 @@ const App = ({ Component, pageProps }: AppProps) => {
               <Footer />
             </Box>
           </Box>
-        </ChakraProvider>
+        </ChakraProvider> */}
       </RecoilRoot>
     </>
   )
