@@ -24,6 +24,9 @@
     "**/*.ts",
     "**/*.tsx"
   ],
+  "files": [
+    "src/types/common.d.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

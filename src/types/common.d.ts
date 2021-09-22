@@ -1,4 +1,4 @@
-export interface BlogType{
+interface BlogType{
   id:string
   title:string
   pic:{

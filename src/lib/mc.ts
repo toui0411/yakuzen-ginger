@@ -2,6 +2,6 @@
 import { createClient } from 'microcms-js-sdk';
 
 export const mcClient = createClient({
-  serviceDomain: 'govote',
+  serviceDomain: 'pj',
   apiKey: process.env.API_KEY as string,
 });
