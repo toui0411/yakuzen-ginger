@@ -407,16 +407,20 @@ select {
   color: red;
 }
 
-.rich-text-area {
-  color: #2850ff;
+.rich-text-area * {
+  color: #2850ff !important;
 }
 
 .rich-text-area * {
   word-break: break-all;
 }
 
+.rich-text-area strong {
+  color: #ff0078 !important;
+}
+
 .rich-text-area a {
-  color: #ff2c60;
+  color: #ff0078 !important;
 }
 
 .rich-text-area p {

@@ -388,12 +388,17 @@ select {
 }
 
 .rich-text-area {
-  color: $blue;
+  *{
+    color: $blue!important;
+  }
   *{
     word-break: break-all;
   }
+  strong{
+    color: $pink!important;
+  }
   a{
-    color: $red;
+    color: $pink!important;
   }
   p {
     margin:10px 0;
