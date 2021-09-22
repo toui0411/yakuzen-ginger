@@ -408,7 +408,7 @@ select {
 }
 
 .rich-text-area * {
-  color: #2850ff !important;
+  color: #2850ff;
 }
 
 .rich-text-area * {
@@ -416,11 +416,11 @@ select {
 }
 
 .rich-text-area strong {
-  color: #ff0078 !important;
+  color: #ff0078;
 }
 
 .rich-text-area a {
-  color: #ff0078 !important;
+  color: #ff0078;
 }
 
 .rich-text-area p {

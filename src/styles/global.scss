@@ -389,16 +389,16 @@ select {
 
 .rich-text-area {
   *{
-    color: $blue!important;
+    color: $blue;
   }
   *{
     word-break: break-all;
   }
   strong{
-    color: $pink!important;
+    color: $pink;
   }
   a{
-    color: $pink!important;
+    color: $pink;
   }
   p {
     margin:10px 0;
