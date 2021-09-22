@@ -67,9 +67,9 @@ const App = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO} />
       <RecoilRoot>
         <ChakraProvider theme={theme}>
-          <Box>
-            <FixImage />
-            <Box ml="auto" maxW="30rem" overflow="hidden">
+          <Box bg="mainPink">
+            {/* <FixImage /> */}
+            <Box mx="auto" maxW="30rem" overflow="hidden" bg="white">
               <Transition location={router.pathname}>
                 <Component {...pageProps} />
               </Transition>
