@@ -22,7 +22,7 @@ export const BlueBorder = {
 }
 
 
-const Top = ({ blogs }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Top = ({ blogs, company }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const [state, setState] = useRecoilState(blogState);
   useEffect(() => {
     setState(blogs)
@@ -42,6 +42,7 @@ const Top = ({ blogs }: InferGetStaticPropsType<typeof getStaticProps>) => {
       <TopSns></TopSns>
       <TopArticleTitle></TopArticleTitle>
       <TopArticleList></TopArticleList>
+      <TopCompany info={company}></TopCompany>
     </Box>
   )
 }
@@ -89,7 +90,7 @@ const TopModal: FC = () => {
         <Box color="mainPink" py={1} fontSize={18} borderBottomWidth="7px" borderColor="mainBlue">
           2021 第49回衆議院議員選挙
         </Box>
-        <Box color="white" cursor="pointer" fontSize={45} py={2} onClick={onOpen} bg="mainPink" _hover={{color: 'mainPink', bg: "white"}}>
+        <Box color="white" cursor="pointer" fontSize={45} py={2} onClick={onOpen} bg="mainPink" _hover={{ color: 'mainPink', bg: "white" }}>
           投票宣言する
         </Box>
         <Box color="white" py={2} fontSize={18} bg="mainBlue">
@@ -125,6 +126,25 @@ const TopSns: FC = () => {
     </Box>
   )
 }
+
+const TopCompany: FC<any> = ({ children, info }) => {
+  return (
+    <Box pt={3}>
+      <Box py={4} px={3} w="94%" mx="auto" {...BlueBorder}>
+        <Box fontSize={13} color="mainPink">
+          ＜法人概要＞
+        </Box>
+        <Box fontSize={16} mt={2} color="mainBlue">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `${info.content}`,
+            }}
+          />
+        </Box>
+      </Box>
+    </Box>
+  )
+}
 const TopArticleTitle: FC = () => {
   return (
     <Box textAlign='center' pt={3}>
@@ -146,7 +166,7 @@ const TopArticleList: FC = () => {
               <Link href={`/votes/${blog.id}`} role="group">
                 <Box>
                   <AspectRatio maxW="100%" ratio={16 / 9} overflow="hidden">
-                    <Image src={blog.pic.url} alt="naruto" objectFit="cover" _hover={{ transform:'scale(1.1)' }} transition={`transform 1.2s ${easeInOutCw}`}/>
+                    <Image src={blog.pic.url} alt="naruto" objectFit="cover" _hover={{ transform: 'scale(1.1)' }} transition={`transform 1.2s ${easeInOutCw}`} />
                   </AspectRatio>
                 </Box>
                 <Box py={2} px={2} borderTopWidth="7px" borderColor="mainBlue">
@@ -174,9 +194,11 @@ export default Top;
 // ビルド時に実行される
 export async function getStaticProps() {
   const data = await mcClient.get({ endpoint: "blog" }) as any;
+  const companyData = await mcClient.get({ endpoint: "company" }) as any;
   return {
     props: {
       blogs: data.contents as BlogType[],
+      company: companyData,
     },
   };
 }
