@@ -9,6 +9,7 @@ import { BlogType } from '../types/common'
 import { dateDisplay } from '../lib/dateDisplay'
 import Link from './../components/Link';
 import CommonMeta from 'src/components/CommonMeta'
+import { easeInOutCw, easeOutQuint } from 'src/lib/easing'
 
 const spin = keyframes`
   from { transform: translate(0,0); }
@@ -88,7 +89,7 @@ const TopModal: FC = () => {
         <Box color="mainPink" py={1} fontSize={18} borderBottomWidth="7px" borderColor="mainBlue">
           2021 第49回衆議院議員選挙
         </Box>
-        <Box color="white" cursor="pointer" fontSize={45} py={2} onClick={onOpen} bg="mainPink">
+        <Box color="white" cursor="pointer" fontSize={45} py={2} onClick={onOpen} bg="mainPink" _hover={{color: 'mainPink', bg: "white"}}>
           投票宣言する
         </Box>
         <Box color="white" py={2} fontSize={18} bg="mainBlue">
@@ -142,10 +143,10 @@ const TopArticleList: FC = () => {
         {
           blogs.map(blog => {
             return <Box {...BlueBorder} key={blog.id}>
-              <Link href={`/votes/${blog.id}`}>
+              <Link href={`/votes/${blog.id}`} role="group">
                 <Box>
-                  <AspectRatio maxW="100%" ratio={16 / 9}>
-                    <Image src={blog.pic.url} alt="naruto" objectFit="cover" />
+                  <AspectRatio maxW="100%" ratio={16 / 9} overflow="hidden">
+                    <Image src={blog.pic.url} alt="naruto" objectFit="cover" _hover={{ transform:'scale(1.1)' }} transition={`transform 1.2s ${easeInOutCw}`}/>
                   </AspectRatio>
                 </Box>
                 <Box py={2} px={2} borderTopWidth="7px" borderColor="mainBlue">

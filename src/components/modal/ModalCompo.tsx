@@ -112,8 +112,8 @@ const ModalShareButton: FC = () => {
     window.open(tweet);
   }
   return (
-    <Box py={3} pb={5} textAlign='center' color="white" onClick={()=>{onClick()}}>
-      <Box w="96%" mx="auto" {...BlueBorder} py={4}>
+    <Box py={3} pb={5} textAlign='center' cursor="pointer" color="white" onClick={()=>{onClick()}}>
+      <Box w="96%" mx="auto" {...BlueBorder} py={4} _hover={{color: 'mainPink', bg: "white"}}>
         <Box fontSize={42} lineHeight={1}>
           投票宣言する
         </Box>
