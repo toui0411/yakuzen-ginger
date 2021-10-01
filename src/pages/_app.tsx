@@ -13,35 +13,46 @@ import { Box, extendTheme } from '@chakra-ui/react'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
 import Transition from "../components/Transition"
+import { createBreakpoints } from "@chakra-ui/theme-tools"
+
+
+const styles = {
+  global: (props: any) => ({
+    "body": {
+      color: "mainGreen",
+      fontFamily: "'Kiwi Maru', serif"
+    },
+  })
+}
+
+const breakpoints = createBreakpoints({
+  sm: "38em",
+  md: "50em",
+  lg: "70em",
+  xl: "80em",
+})
 
 const theme = extendTheme({
+  styles: styles,
   colors: {
-    mainPink: "#ff0078",
-    mainBlue: "#2850ff",
-    brand: {
-      100: "#ff0078",
-      900: "#1a202c",
+    mainGreen: "#809464",
+    beige: "#dfdddb",
+  },
+  breakpoints,
+  components: {
+    Drawer: {
+      defaultProps: {
+        size: "xs",
+        variant: "",
+      },
+      sizes: {
+        "xs": { dialog: { maxW: "70vw", h: "100vh" } }
+      },
     },
   },
 })
 
-import { createBreakpoints } from "@chakra-ui/theme-tools"
-const breakpoints = createBreakpoints({
-  sm: "25em",
-  md: "30em",
-  lg: "62em",
-  xl: "62em",
-})
 
-const Footer: FC = () => {
-  return (
-    <Box textAlign='center' py={3}>
-      <Box fontSize={13} color="mainBlue">
-        Go Vote Japan
-      </Box>
-    </Box>
-  )
-}
 
 const App = ({ Component, pageProps }: AppProps) => {
 
@@ -73,7 +84,6 @@ const App = ({ Component, pageProps }: AppProps) => {
               <Transition location={router.pathname}>
                 <Component {...pageProps} />
               </Transition>
-              <Footer />
             </Box>
           </Box>
         </ChakraProvider>
