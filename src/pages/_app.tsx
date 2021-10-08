@@ -15,12 +15,13 @@ import SEO from '../../next-seo.config'
 import Transition from "../components/Transition"
 import { createBreakpoints } from "@chakra-ui/theme-tools"
 
-
 const styles = {
   global: (props: any) => ({
     "body": {
       color: "mainGreen",
-      fontFamily: "'Kiwi Maru', serif"
+      fontFamily: "'Kiwi Maru', serif",
+      bg: "white",
+      minH: "100vh"
     },
   })
 }
@@ -49,9 +50,20 @@ const theme = extendTheme({
         "xs": { dialog: { maxW: "70vw", h: "100vh" } }
       },
     },
+    Button: {
+      baseStyle: {
+        
+      },
+      // 3. We can add a new visual variant
+      variants: {
+        "original": {
+          bg: "rgba(255,255,255,0.3)",
+          boxShadow: "0 0 2px 2px #efdfde",
+        },
+      },
+    },
   },
 })
-
 
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -78,9 +90,8 @@ const App = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO} />
       <RecoilRoot>
         <ChakraProvider theme={theme}>
-          <Box bg="mainPink">
-            {/* <FixImage /> */}
-            <Box mx="auto" maxW="30rem" overflow="hidden" bg="white">
+          <Box>
+            <Box>
               <Transition location={router.pathname}>
                 <Component {...pageProps} />
               </Transition>
@@ -91,14 +102,5 @@ const App = ({ Component, pageProps }: AppProps) => {
     </>
   )
 }
-
-const FixImage: FC = () => {
-  return (
-    <Box display="flex" alignItems="center" justifyContent="center" position="fixed" h="100%" left="0" top="0" w={['0px', 'calc(100vw - 30rem)']}>
-      <Image w="100%" src="/img/ogp/1.jpg"></Image>
-    </Box>
-  )
-}
-
 
 export default App

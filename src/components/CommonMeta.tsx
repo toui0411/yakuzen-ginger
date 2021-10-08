@@ -2,8 +2,8 @@
 
 import Head from 'next/head'
 
-export default function CommonMeta({ title = "GO VOTE JAPAN", description = "GO VOTE JAPAN", url = "", ogpURL = "" }) {
-
+export default function CommonMeta({ title = "", description = "", url = "", ogpURL = "" }) {
+  
   return (
     <Head>
       <title>{title}</title>
@@ -17,4 +17,3 @@ export default function CommonMeta({ title = "GO VOTE JAPAN", description = "GO 
     </Head>
   )
 }
-
