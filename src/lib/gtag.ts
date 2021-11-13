@@ -24,3 +24,4 @@ export const event = ({ action, category, label, value }: GTagEvent): void => {
     value: value,
   })
 }
+
