@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "ci": "act --secret-file .secrets",
-    "dev": "next dev",
-    "deployset:dev": "firebase target:apply hosting dev firebase-prj",
-    "deployset:prd": "firebase target:apply hosting prd firebase-prj-production",
+    "dev": "next dev -p 3100",
+    "deployset:dev": "firebase target:apply hosting dev netflix-chocolaterie",
+    "deployset:prd": "firebase target:apply hosting prd netflix-chocolaterie-prd",
     "build": "next build",
     "deploy": "firebase deploy",
     "deploy:dev": "firebase deploy --only hosting:dev",

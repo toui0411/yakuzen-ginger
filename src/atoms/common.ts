@@ -1,5 +1,4 @@
 import { atom, atomFamily, selector } from "recoil";
-import { BlogType } from "src/types/common";
 
 export const textState = atomFamily({
   key: 'textState',

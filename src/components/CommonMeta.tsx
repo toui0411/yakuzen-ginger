@@ -15,7 +15,7 @@ export default function CommonMeta({ title = "", description = "", url = "", ogp
       <meta property="og:image" content={ogpURL} />
       <meta property="og:url" content={url} />
       <meta name="twitter:card" content="summary_large_image" />
-      <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+      <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
     </Head>
   )
 }

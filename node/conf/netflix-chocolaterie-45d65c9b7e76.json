@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "netflix-chocolaterie",
+  "private_key_id": "45d65c9b7e7607f630e51f95b3a898d93134692b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCj0pSWDOU95bP4\nJsAmtCubkxm6z2xPnpH/2f/JeUIpdTeZI9HCvSDT/+THICtQkdyyCaEg9g+tZxgF\nZM02jiFZf9T8F4lyM/NoYQvX81Dd2IVO6MSNc+wXPmwdBZx4qVzxSfMBeMrm8lb2\nmP96iHZzGHiSSKQ+qtx4kOu0mc+riml5SSNwLIhCH4Tp6Wrbfalsg1YDZ5VPr4cU\nXjWoMZrLTlt1mPrF6bOabd0ZSiY77BXBKASTTjIpwXDnxD4PwtcS+CEAqsjGhxEB\noFmFQiv9/BDlFWoyZ60oDNf7tD0NR/lMBiSzKVhkQGoLaiXiesnO48XqalRIo3n3\n+O/hlThrAgMBAAECggEAQYyt9Yg9ZdH2e/GNay8mT77BSdVbQlRxmM0yovwI9Cu5\nzmXdta0VaJ54fRCrJDbo9rgRp+2tAjZBD09xKUYfo/8ZSrFkRrTwzTAfnA34qnvL\ng3JxyyO6MObCPa6UGFe0H7v2Jv2dOmF3WH6Jow7dTlpZTDcSuRyG0RszpPTyenFo\ngWI3Fq8+J/pjGfzIlqn+x1pbBgLw9rYm0lf7PlcGMRHkTpu0vd21G61U8XnpuPB/\neeWnrZIQmAYMqtuTLoav3y5h71Kj6HdGwxqvsLTr5WT7+lpCmHZX80jcj+U2LmVC\n2w8NSWcJbX9WIGSqnNRGWUAbcID28f3hEglVMvwl6QKBgQDXUE2ZQQG5ijD7KJgG\nCjqeiFC26cY/eN1euzDgP5qKQ+3b4OTKhAiBAlnqDou9FXvdkGrIeLLTr/QQZ5PI\nvfLL3AEdQQ5mo07qj+Rd0GDYShu8Cq9W9gwqfuG5iqHHosX86YLYo+jvaFVwdJEO\nZwqA2NlMqdpeghp4tgsxsG/3dQKBgQDCx2tumzvnLlM8mVyJcREpeUJEWFWoQcRj\nK/+ex5/p9OGXy+uEvFrJ8mfDc7h0J2IW1o17LT7yU6n4vyKQ4z6obhc/wE7jEaAq\no24wQPwH8/K/4BGA99Xq2VkK99C1PyEF5mnzUxFn2y1QdTpuyt3lT5jQEr5MQuGA\nK3seur5UXwKBgCRjifnQpr34wPZxkd/TcrzARQPk1oB7qM4NzODZXwDnIhf7Fi+z\nyMwk3ZVVCADY1KpJcgKXg4GLRzBOkQdoMtSJRhbvm8N07i1uTCYexX9IZw+Mrr1/\nr+ausu9sopLey59Gx7pdWUy80VPEH4/Tkk7cVz1Bp4o5asfj3Fh1fTbRAoGATsJc\nSokym7Q7rBFHPbweeGqzxPcDC9osEv3DiuylWPDQF5U5Up7nBymhk4LDXxRdsWZo\nJxqQjWQPIqoGzBdXSrvZYsncHC0QWq1i7NgaEQ0vZy6vZTrRoPjp7GlwVxmDvOMC\njIVWUGxr0lDUo+AcAZFB9UDe+e9BR5ZNXoucUnkCgYBELyQua76uUTiy+WUy8o/E\nqOFcYu1ltHaosUdAoruLHjA/lZyk8hSoRrw0Ds7qochri5xUfqh7sSD3eU9mpUHy\nZAQyrlKd6Ks5JYWS6jQ+n625TJhtpnCml/g4ObLs4A47l8/MTOdAYyKf/9aYa7WQ\nfmf5hk3FTdmJSzTc1XndhA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-dqayn@netflix-chocolaterie.iam.gserviceaccount.com",
+  "client_id": "101022006550122455665",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-dqayn%40netflix-chocolaterie.iam.gserviceaccount.com"
+}

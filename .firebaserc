@@ -1,15 +1,15 @@
 {
   "projects": {
-    "default": "firebase-prj"
+    "default": "netflix-chocolaterie"
   },
   "targets": {
     "test-site-hosting": {
       "hosting": {
         "dev": [
-          "firebase-prj"
+          "netflix-chocolaterie"
         ],
         "prd": [
-          "firebase-prj-production"
+          "netflix-chocolaterie-prd"
         ]
       }
     }
