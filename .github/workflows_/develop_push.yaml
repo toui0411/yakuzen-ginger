@@ -3,8 +3,8 @@ name: CI
 on:
   push: # プッシュした時に実行
     branches: # ブランチを指定
-      - develop
-      
+      - main
+
 jobs:
   FrontDeploy:
     name: FrontDeploy
@@ -13,16 +13,13 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@master
     - name: setup Node
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v2
       with: 
-        node-version: 12.x
-        registry-url: 'https://registry.npmjs.org'
+        node-version: '14'
+        cache: yarn
     - name: Install Dependencies
       run: yarn && yarn build && yarn export
-      
-    - name: deployConfig
-      run: |
-        yarn deployset:dev
+      # ↑ buildが違うコマンドなら、適宜変更して下さい
     - name: deploy to Firebase Hosting
-      run: |
-        yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:dev
+      run: yarn deployset:prd && yarn deploy --token="${{ secrets.FIREBASE_TOKEN }}" --only hosting:prd
+
