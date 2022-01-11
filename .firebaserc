@@ -1,15 +1,15 @@
 {
   "projects": {
-    "default": "govote-ca429"
+    "default": "firebase-prj"
   },
   "targets": {
     "test-site-hosting": {
       "hosting": {
         "dev": [
-          "govote-ca429"
+          "firebase-prj"
         ],
         "prd": [
-          "govote-production"
+          "firebase-prj-production"
         ]
       }
     }

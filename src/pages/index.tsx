@@ -19,10 +19,10 @@ const Top = () => {
   return (
     <Box>
       <CommonMeta
-        title="GO VOTE JAPAN"
-        description="GO VOTE JAPAN"
-        url="https://govote.jp"
-        ogpURL="https://govote.jp/img/OGP.png"
+        title="site title"
+        description="site description"
+        url="https://site.jp"
+        ogpURL="https://site.jp/img/OGP.png"
       />
     </Box>
   )

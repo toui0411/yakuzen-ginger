@@ -29,21 +29,3 @@ export const blogState = atom({
   key: 'blogState',
   default: [] as BlogType[]
 });
-
-export const shareURLState = selector({
-  key: 'shareURLState',
-  get: ({ get }) => {
-    const shareState = get(shareInfoState);
-    const tweet =
-      "https://twitter.com/intent/tweet?url=" +
-      encodeURIComponent(
-        `https://govote.jp/image/${shareState.shareImage
-        }`
-      ) +
-      "&text=" + encodeURIComponent(`${shareState.shareTags.map(tag => `#${tag} `).join(' ')} 
-`);
-    console.log(tweet)
-    return tweet;
-  },
-});
-

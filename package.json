@@ -5,8 +5,8 @@
   "scripts": {
     "ci": "act --secret-file .secrets",
     "dev": "next dev",
-    "deployset:dev": "firebase target:apply hosting dev govote-ca429",
-    "deployset:prd": "firebase target:apply hosting prd govote-production",
+    "deployset:dev": "firebase target:apply hosting dev firebase-prj",
+    "deployset:prd": "firebase target:apply hosting prd firebase-prj-production",
     "build": "next build",
     "deploy": "firebase deploy",
     "deploy:dev": "firebase deploy --only hosting:dev",
