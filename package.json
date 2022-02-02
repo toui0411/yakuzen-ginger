@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "ci": "act --secret-file .secrets",
-    "dev": "next dev -p 3100",
-    "deployset:dev": "firebase target:apply hosting dev netflix-chocolaterie",
-    "deployset:prd": "firebase target:apply hosting prd netflix-chocolaterie-prd",
+    "dev": "next dev -p 3102",
+    "deployset:dev": "firebase target:apply hosting dev yakuzen-ginger",
+    "deployset:prd": "firebase target:apply hosting prd yakuzen-ginger-prd",
     "build": "next build",
     "deploy": "firebase deploy",
     "deploy:dev": "firebase deploy --only hosting:dev",
@@ -37,6 +37,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@types/lodash": "^4.14.178",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",

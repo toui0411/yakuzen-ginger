@@ -2,7 +2,7 @@
 
 import Head from 'next/head'
 
-export default function CommonMeta({ title = "", description = "", url = "", ogpURL = "" }) {
+export default function CommonMeta({ title = "薬膳ジンジャー", description = "体も心もポカポカに。薬膳ジンジャーできました。", url = "https://yakuzen-ginger.jp", ogpURL = "https://yakuzen-ginger.jp/img/OGP.png" }) {
   
   return (
     <Head>

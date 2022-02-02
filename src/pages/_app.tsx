@@ -13,10 +13,13 @@ import { DefaultSeo } from 'next-seo'
 import SEO from '../../next-seo.config'
 import Transition from "../components/Transition"
 import { theme } from '@/lib/theme';
+import { AppHeader } from '@/components/Common/AppHeader';
+import { AppFooter } from '@/components/Common/AppFooter';
+import { BgLogo } from '@/components/Common/Logo copy';
 
 
 const App = ({ Component, pageProps }: AppProps) => {
-  
+
   const router = useRouter()
   useEffect(() => {
     const handleRouteChange = (
@@ -39,11 +42,14 @@ const App = ({ Component, pageProps }: AppProps) => {
       <DefaultSeo {...SEO} />
       <RecoilRoot>
         <ChakraProvider theme={theme}>
-          <Box>
-            <Box>
+          <AppHeader></AppHeader>
+          <BgLogo></BgLogo>
+          <Box position={'relative'} zIndex={1}>
+            <Box w={'375px'} mx={'auto'} bgColor={"red"}>
               <Transition location={router.pathname}>
                 <Component {...pageProps} />
               </Transition>
+              <AppFooter></AppFooter>
             </Box>
           </Box>
         </ChakraProvider>

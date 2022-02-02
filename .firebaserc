@@ -1,15 +1,15 @@
 {
   "projects": {
-    "default": "netflix-chocolaterie"
+    "default": "yakuzen-ginger"
   },
   "targets": {
     "test-site-hosting": {
       "hosting": {
         "dev": [
-          "netflix-chocolaterie"
+          "yakuzen-ginger"
         ],
         "prd": [
-          "netflix-chocolaterie-prd"
+          "yakuzen-ginger-prd"
         ]
       }
     }

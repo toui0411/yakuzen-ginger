@@ -4,10 +4,12 @@ import { Box, extendTheme } from '@chakra-ui/react'
 const styles = {
   global: (props: any) => ({
     "body": {
-      color: "mainGreen",
-      fontFamily: "'Kiwi Maru', serif",
-      bg: "white",
-      minH: "100vh"
+      color: "black",
+      fontFamily: '"游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif',
+      bgColor: "red",
+      minH: "100vh",
+      fontWeight:500,
+      lineHeight:1.71,
     },
   })
 }
@@ -22,8 +24,8 @@ const breakpoints = createBreakpoints({
 export const theme = extendTheme({
   styles: styles,
   colors: {
-    mainGreen: "#809464",
-    beige: "#dfdddb",
+    red: "#e01f19",
+    black: "#231815",
   },
   breakpoints,
   components: {
