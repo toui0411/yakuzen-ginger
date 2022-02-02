@@ -3,7 +3,7 @@ name: CI
 on:
   push: # プッシュした時に実行
     branches: # ブランチを指定
-      - mai
+      - main
 
 jobs:
   FrontDeploy:
